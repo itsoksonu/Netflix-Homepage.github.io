@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Netflix Homepage</title>
+  <style>
+    /* CSS for the homepage */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    #header {
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    #header #logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    #header #logo img {
+      width: 150px;
+      height: 120px;
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+    
+    #header #options {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    
+    #header #options a {
+      color: #fff;
+      margin-right: 10px;
+      text-decoration: none;
+      background-color: #e50914;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    
+    #header #options select {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: 1px solid white;
+  margin: 50px;
+  margin-left: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+#header #options .language-icon {
+      margin-right: 5px;
+    }
+    
+    #hero {
+      position: relative;
+      height: 73.5vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    
+    #hero::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    
+    #hero h1 {
+      font-size: 48px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    
+    #hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    #email-form {
+      text-align: center;
+    }
+    
+    #email-form input[type="email"] {
+      padding: 10px;
+      font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.466);
+      border: 1px solid #fff;
+      margin-right: 10px;
+    }
+    
+    #email-form button {
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    
+    #footer {
+      
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div id="logo">
+      <img src="logo.png" alt="Netflix Logo">
+    </div>
+    <div id="options">
+      <a href="#" class="sign-in">Sign in</a>
+      <select id="language" onchange="changeLanguage(this.value)">
+        <option value="english">&#127760; English</option>
+        <option value="hindi">&#127760; Hindi</option>
+      </select>
+    </div>
+  </div>
+  
+  <div id="hero">
+    <h1 id="headline">Unlimited movies, TV shows and more</h1>
+    <p id="subline">Watch anywhere. Cancel anytime.</p>
+    <div id="email-form">
+      <p id="instruction">Ready to watch? Enter your email to create or restart your membership.</p>
+      <input type="email" id="email-input" placeholder="Email address">
+      <button id="get-started-button">Get Started</button>
+    </div>
+  </div>
+  
+  <div id="footer">
+    &copy; 2023 Netflix
+  </div>
+
+<script>
+  function changeLanguage(language) {
+    if (language === 'hindi') {
+      document.getElementById('headline').innerText = 'अनलिमिटेड फ़िल्में, टीवी शो के साथ भी बहुत कुछ';
+      document.getElementById('subline').innerText = 'जहां चाहें देखें. जब चाहें कैंसल करें.';
+      document.getElementById('instruction').innerText = 'देखने के लिए तैयार हैं? अपनी मेंबरशिप बनाने या रीस्टार्ट करने के लिए अपना ईमेल एड्रेस डालें.';
+      document.querySelector('.sign-in').innerText = 'साइन इन करें';
+      document.getElementById('get-started-button').innerText = 'शुरू करें';
+      document.getElementById('email-input').placeholder = 'ईमेल एड्रेस';
+    } else {
+      document.getElementById('headline').innerText = 'Unlimited movies, TV shows and more';
+      document.getElementById('subline').innerText = 'Watch anywhere. Cancel anytime.';
+      document.getElementById('instruction').innerText = 'Ready to watch? Enter your email to create or restart your membership.';
+      document.querySelector('.sign-in').innerText = 'Sign in';
+      document.getElementById('get-started-button').innerText = 'Get Started';
+      document.getElementById('email-input').placeholder = 'Email address';
+    }
+  }
+</script>
+</body>
+</html>
